@@ -1,14 +1,11 @@
 const mongoose = require('mongoose');
 
 
-const userSchema = new mongoose.Schema({
+const FileStored = new mongoose.Schema({
   email: { type: String, required: true, unique: true },
-  password:{
-    type:String,
-    required:true,
-    },
+  ftp_data:{type:Array,required:true}
 },{
-  collation:"UserData",
+  collation:"FileStored",
 });
 
-mongoose.model("UserData",userSchema);
+mongoose.model("FileStored",FileStored);
